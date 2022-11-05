@@ -3,12 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-update-student',
-  templateUrl: './update-student.page.html',
-  styleUrls: ['./update-student.page.scss'],
+  selector: 'app-detallereceta',
+  templateUrl: './detallereceta.page.html',
+  styleUrls: ['./detallereceta.page.scss'],
 })
-export class UpdateStudentPage implements OnInit {
-  
+export class DetallerecetaPage implements OnInit {
+
   id: any;
   year:any;
   studentOne:any;
@@ -24,7 +24,6 @@ export class UpdateStudentPage implements OnInit {
       console.log(this.id);
       this.getStudent(this.id);
     })
-
   }
 
   ngOnInit() {
@@ -42,17 +41,4 @@ export class UpdateStudentPage implements OnInit {
     })
   }
 
-  updateStudent(){
-    let data = {
-      year: this.year,
-      studentOne: this.studentOne,
-      studentTwo: this.studentTwo,
-  }
-  this._apiService.updateStudent(this.id,data).subscribe((res:any) =>{
-      console.log("Success",res);
-      this.router.navigateByUrl('/verecetas');
-    },(err:any) => {
-      console.log("Error",err);
-    })
-  }
 }

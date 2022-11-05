@@ -8,12 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'index',
     pathMatch: 'full'
   },
   {
     path: 'update-student/:id',
     loadChildren: () => import('./update-student/update-student.module').then( m => m.UpdateStudentPageModule)
+  },
+  {
+    path: 'index',
+    loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
+  },
+  {
+    path: 'verecetas',
+    loadChildren: () => import('./verecetas/verecetas.module').then( m => m.VerecetasPageModule)
+  },
+  {
+    path: 'detallereceta/:id',
+    loadChildren: () => import('./detallereceta/detallereceta.module').then( m => m.DetallerecetaPageModule)
   },
 ];
 

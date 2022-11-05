@@ -1,52 +1,32 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-verecetas',
+  templateUrl: './verecetas.page.html',
+  styleUrls: ['./verecetas.page.scss'],
 })
-export class HomePage {
-  
+export class VerecetasPage  {
+
   year:any;
   studentOne:any;
   studentTwo:any;
   students: any = [];
 
-
   constructor(
     public _apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router,
-    public navCtrl: NavController,
+
     ) {
+
     this.getStudents();
+     }
+
+  ngOnInit() {
   }
-
-  addStudent(){
-    //console.log(this.year,this.studentOne,this.studentTwo)
-    let data = {
-      year: this.year,
-      studentOne: this.studentOne,
-      studentTwo: this.studentTwo,
-
-    }
-    this._apiService.addStudent(data).subscribe((res:any) => {
-      console.log("Success ===",res);
-      this.year = '';
-      this.studentOne = '';
-      this.studentTwo = '';
-      alert(" Registro Exitoso");
-      this.router.navigateByUrl('index');
-    },(error: any) => {
-      alert("Error");
-      console.log("Error ===",error);
-    })
-  }
-
-  getStudents(){
+   getStudents(){
     this._apiService.getStudents().subscribe((res:any) => {
       console.log("Success ===",res);
       //alert(" Registro Exitoso");
@@ -57,7 +37,7 @@ export class HomePage {
     })
   }
 
-  deleteStudent(id){
+   deleteStudent(id){
     this._apiService.deleteStudent(id).subscribe((res:any) => {
       console.log("Success ===",res);
       this.getStudents = res;
@@ -67,8 +47,7 @@ export class HomePage {
       console.log("Error ===",error);
     })
   }
-
-  refreshPage(e){
+    refreshPage(e){
     this.getStudents();
     setTimeout(() => {
       console.log("La operación se ha agregado");
@@ -76,6 +55,5 @@ export class HomePage {
       e.target.complete();
     }, 2000);
   };
-  
-}
 
+}

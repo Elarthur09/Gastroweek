@@ -35,6 +35,9 @@ export class ApiService {
   updateStudent(id, data){
     return this.http.put('http://localhost/PHP-IONIC-CRUD/backend/updateStudent.php?id='+id,data)
   }
+  
+
+  
 
 
 
