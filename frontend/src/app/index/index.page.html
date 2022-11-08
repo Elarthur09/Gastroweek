@@ -2,17 +2,21 @@
   <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Página principal</ion-title>
+        <ion-title>Menú</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content >
       <ion-button expand="full"  shape="round" fill="outline" [routerLink]="['/home']" >
         Crear receta
-        <ion-icon slot="end" name="star"></ion-icon>
+        <ion-icon slot="end" name="create"></ion-icon>
       </ion-button>
       <ion-button expand="full"  shape="round" fill="outline" [routerLink]="['/verecetas']" >
         Ver receta
-        <ion-icon slot="end" name="star"></ion-icon>
+        <ion-icon slot="end" name="newspaper"></ion-icon>
+      </ion-button>
+      <ion-button  expand="full"  shape="round" fill="outline" [routerLink]="['/verecetas']" >
+        Ver receta en Yutube
+        <ion-icon slot="end" name="LOGO-YOUTUBE"></ion-icon>
       </ion-button>
     </ion-content>
   </ion-menu>
@@ -23,11 +27,48 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Menu</ion-title>
+        <ion-title>Página principal</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      Tap the button in the toolbar to open the menu.
+      <H2>GastroWeek</H2>
+     <ion-card color="secondary">
+      <ion-img src="../assets/Pag_principal/principal.png"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Crea deliciosos platillos</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Estómago contento es igual a corazón contento. Lo sabemos, y como nuestro propósito es alegrar la vida de todos de aquí no se irá nadie sin su estómago satisfecho.
+      </ion-card-content>
+    </ion-card>
+     <ion-card color="secondary">
+  <ion-card-header>
+    <ion-card-title>¿Estas listo?</ion-card-title>
+    <ion-card-subtitle>Comienza!!</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+        <ion-button color="light" expand="full"  shape="round" fill="outline" [routerLink]="['/home']" >
+        Crear receta
+        <ion-icon slot="end" name="create"></ion-icon>
+      </ion-button>
+      <ion-button color="light" expand="full"  shape="round" fill="outline" [routerLink]="['/verecetas']" >
+        Ver receta
+        <ion-icon slot="end" name="newspaper"></ion-icon>
+      </ion-button>
+      <ion-button color="light" expand="full"  shape="round" fill="outline" [routerLink]="['/verecetas']" >
+        Ver receta en Yutube
+        <ion-icon slot="end" name="LOGO-YOUTUBE"></ion-icon>
+      </ion-button>
+
+
+  </ion-card-content>
+</ion-card>
+       
+        <iframe src="https://www.youtube.com/embed/JC_xUGs6sY4"></iframe>
+        <iframe src="https://www.youtube.com/embed/h6bg8X5qNUs"></iframe>
+        
+        
     </ion-content>
   </div>
 </ion-app>

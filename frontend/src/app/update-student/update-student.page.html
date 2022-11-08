@@ -1,26 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Actualizar estudiante</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Actualizar receta</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/index"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-list lines="full">
    <ion-item>
-     <ion-label position="floating">Year</ion-label>
+     <ion-label position="floating">Nombre de la receta</ion-label>
      <ion-input [(ngModel)]="year" type="text"></ion-input>
    </ion-item>
    <ion-item>
-     <ion-label position="floating">Estudiante 1</ion-label>
-     <ion-input [(ngModel)]="studentOne" type="text"></ion-input>
+     <ion-label position="floating">Ingredientes y materiales</ion-label>
+     <ion-textarea rows="13" [(ngModel)]="studentOne" type="text"></ion-textarea>
    </ion-item>
    <ion-item>
-     <ion-label position="floating">Estudiante 2</ion-label>
-     <ion-input [(ngModel)]="studentTwo" type="text"></ion-input>
+     <ion-label position="floating">Pasos a seguir</ion-label>
+     <ion-textarea rows="13" [(ngModel)]="studentTwo" type="text"></ion-textarea>
    </ion-item>
    <ion-row>
      <ion-col>
-       <ion-button type= "button" (click) ="updateStudent()" color="primary" shape="full" expand="block"> Actualizar estudiante</ion-button>
+       <ion-button type= "button" (click) ="updateStudent()" color="primary" shape="full" expand="block"> Actualizar receta</ion-button>
      </ion-col>
    </ion-row>
  </ion-list>

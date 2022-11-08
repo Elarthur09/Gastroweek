@@ -55,5 +55,6 @@ export class VerecetasPage  {
       e.target.complete();
     }, 2000);
   };
+  
 
 }
