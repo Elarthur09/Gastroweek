@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'detallereceta/:id',
     loadChildren: () => import('./detallereceta/detallereceta.module').then( m => m.DetallerecetaPageModule)
   },
+  {
+    path: 'listayutu',
+    loadChildren: () => import('./listayutu/listayutu.module').then( m => m.ListayutuPageModule)
+  },
 ];
 
 @NgModule({
