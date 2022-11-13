@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate } from '@angular/fire/auth-guard';
+
+//Añadimos este código
+  const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+  const redirectLoggedInToHome = () => redirectLoggedInTo(['index']);
 
 const routes: Routes = [
   {
@@ -8,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'index',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -17,11 +23,13 @@ const routes: Routes = [
   },
   {
     path: 'index',
-    loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule)
+    loadChildren: () => import('./index/index.module').then( m => m.IndexPageModule),
+    //...canActivate(redirectLoggedInToHome)
   },
   {
     path: 'verecetas',
-    loadChildren: () => import('./verecetas/verecetas.module').then( m => m.VerecetasPageModule)
+    loadChildren: () => import('./verecetas/verecetas.module').then( m => m.VerecetasPageModule),
+    //...canActivate(redirectLoggedInToHome)
   },
   {
     path: 'detallereceta/:id',
@@ -31,6 +39,11 @@ const routes: Routes = [
     path: 'listayutu',
     loadChildren: () => import('./listayutu/listayutu.module').then( m => m.ListayutuPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+
 ];
 
 @NgModule({
