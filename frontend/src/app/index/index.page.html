@@ -6,28 +6,46 @@
       </ion-toolbar>
     </ion-header>
     <ion-content >
-      <ion-button expand="full"  shape="round" fill="outline" [routerLink]="['/home']" >
-        Crear receta
-        <ion-icon slot="end" name="create"></ion-icon>
-      </ion-button>
-      <ion-button expand="full"  shape="round" fill="outline" [routerLink]="['/verecetas']" >
-        Ver receta
-        <ion-icon slot="end" name="newspaper"></ion-icon>
-      </ion-button>
-      <ion-button  expand="full"  shape="round" fill="outline" [routerLink]="['/listayutu']" >
-        Top recetas en Youtube
-        <ion-icon slot="end" name="LOGO-YOUTUBE"></ion-icon>
-      </ion-button>
+      <ion-card>
+        <h3 class="center-text">Avatar</h3>
+        <div class="preview">
+          <ion-avatar (click)="changeImage()">
+            <img *ngIf="profile?.imageUrl; else placheolder_avatar;" [src]="profile.imageUrl" />
+            <ng-template #placheolder_avatar>
+              <div class="fallback">
+                <p>Select avatar</p>
+              </div>
+            </ng-template>
+          </ion-avatar>
+        </div>
+        <ion-button expand="full"  shape="round" fill="outline" [routerLink]="['/home']" >
+          Crear receta
+          <ion-icon slot="end" name="create"></ion-icon>
+        </ion-button>
+        <ion-button expand="full"  shape="round" fill="outline" [routerLink]="['/verecetas']" >
+          Ver receta
+          <ion-icon slot="end" name="newspaper"></ion-icon>
+        </ion-button>
+        <ion-button  expand="full"  shape="round" fill="outline" [routerLink]="['/listayutu']" >
+          Top recetas en Youtube
+          <ion-icon slot="end" name="LOGO-YOUTUBE"></ion-icon>
+        </ion-button>
+      </ion-card>
+      
     </ion-content>
   </ion-menu>
   
   <div class="ion-page" id="main-content">
     <ion-header>
       <ion-toolbar color="primary">
+        <ion-title>Página principal</ion-title>
+        <ion-button style="color:white ;" slot="end" (click)="logout()">
+          <ion-icon slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Página principal</ion-title>
+         
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
@@ -59,6 +77,7 @@
       <ion-item routerLink="/listayutu" detail >
         <ion-label  color="secondary">Top recetas en Youtube</ion-label>
       </ion-item>
+     
     </ion-list>
 
     <!--
@@ -76,8 +95,11 @@
       </ion-button>
 -->
 
+
   </ion-card-content>
 </ion-card>
+
+
        
         
         

@@ -9,6 +9,7 @@ ion-menu::part(container) {
 }
 .center-text {
    text-align: center;
+   color: dodgerblue;
 }
 /* iOS places the subtitle above the title */
 ion-card-header.ios {
@@ -19,4 +20,27 @@ ion-card-header.ios {
 ion-card-header.ios {
   display: flex;
   flex-flow: column-reverse;
+}
+ion-avatar {
+  width: 85px;
+  height: 85px;
+}
+
+.preview {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.fallback {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #bfbfbf;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
 }
