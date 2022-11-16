@@ -1,3 +1,4 @@
+<!--
 <ion-header>
 	<ion-toolbar color="primary">
 		<ion-title>Iniciar sesión</ion-title>
@@ -24,4 +25,51 @@
 			>Crear cuenta</ion-button
 		>
 	</form>
+</ion-content>
+-->
+<ion-header  class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-title>login</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card class="ion-no-margin">
+  <ion-img src="assets/images/header.png"></ion-img>
+  <ion-card-header>
+  <ion-card-title>
+     Bienvenido a Gastroweek 
+  </ion-card-title>
+  <ion-card-subtitle class="ion-text">
+  	<p><b>Tu mejor recetario</b></p>
+    <p>"La vida es como una torta, tienes que llenarla con los mejores ingredientes"</p>
+  </ion-card-subtitle>
+
+  </ion-card-header>
+
+  <ion-card-content>
+    <form (ngSubmit)="login()" [formGroup]="credentials">
+		<ion-item fill="solid" class="ion-margin-bottom">
+			<ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+			<ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors"
+				>Email is invalid</ion-note
+			>
+		</ion-item>
+		<ion-item fill="solid" class="ion-margin-bottom">
+			<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			<ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors"
+				>Password needs to be 6 characters</ion-note
+			>
+		</ion-item>
+
+		<ion-button type="submit" expand="block" [disabled]="!credentials.valid">Iniciar sesión</ion-button>
+		<ion-button type="button" expand="block" color="secondary" (click)="register()"
+			>Crear cuenta</ion-button
+		>
+	</form>
+  </ion-card-content>
+
+</ion-card>
+
 </ion-content>
